@@ -28,8 +28,29 @@ class HTMLNode:
         
         return False
     
+class LeafNode(HTMLNode):
+    def __init__(self, tag, value, props=None):
+        super().__init__(tag=tag, value=value, props=props)
+        self.children = None
 
-html_node = HTMLNode("testTag", "testValue", None, {"testProp1": "value1", "testProp2": "value2"})
+    def to_html(self):
+        html_string = ""
+        
+        if self.value is None:
+            raise ValueError
+        
+        if self.tag is None:
+            html_string = self.value
+            return html_string
+        
+        if self.props is not None and len(self.props) > 0:
+            props_string = self.props_to_html()
+            html_string = f"<{self.tag} {props_string}>{self.value}</{self.tag}>"
+            return html_string
 
-print(html_node)
-print(html_node.props_to_html())
+        else:
+            html_string = f"<{self.tag}>{self.value}</{self.tag}>"
+            return html_string
+        
+    def __repr__(self):
+        return f"HTMLNode({self.tag}, {self.value}, {self.props})"
