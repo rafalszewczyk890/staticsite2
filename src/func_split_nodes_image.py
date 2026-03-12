@@ -24,22 +24,3 @@ def split_nodes_image(old_nodes):
                     new_nodes.append(TextNode(split_node[1], TextType.TEXT))
 
     return new_nodes
-
-
-'''
-node = TextNode(
-    "This is text with an ![image](https://i.imgur.com/zjjcJKZ.png) and another ![second image](https://i.imgur.com/3elNhQu.png)",
-    TextType.TEXT,
-)
-node2 = TextNode(
-    "This is text with an ![image](https://i.imgur.com/zjjcJKZ.png) and a link [link](https://i.imgur.com/3elNhQu.png)",
-    TextType.TEXT,
-)
-node3 = TextNode(
-    "This is text with an ![image](https://i.imgur.com/zjjcJKZ.png) and a something.",
-    TextType.TEXT,
-)
-new_nodes = split_nodes_image([node, node2, node3])
-
-print(new_nodes)
-'''
