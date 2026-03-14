@@ -1,7 +1,6 @@
-from textnode import TextType, TextNode
+from func_copy_files import copy_files
 
 def main():
-    node = TextNode("This is a test", TextType.CODE, "testlink.url")
-    print(node)
-
+        copy_files("./static", "./public")
+    
 main()
