@@ -1,4 +1,3 @@
-import re
 from htmlnode import BlockType
 
 def block_to_block_type(block):
